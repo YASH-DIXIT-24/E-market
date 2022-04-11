@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Mobile Price Prediction</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+ <div class="mobile-image"></div>
+	<h1>Predict Mobile Price</h1>
+  <form action="{{ url_for('predict_laptop')}}"method="post">
+    <input type="text" name="Storage" placeholder="Storage" required="required" /> <br> <br>
+    <input type="text" name="RAM" placeholder="RAM" required="required" /> <br> <br>
+    <input type="text" name="ROM" placeholder="ROM" required="required" /> <br> <br>
+    <input type="text" name="Screen Size" placeholder="Screen Size" required="required"/> <br> <br>
+    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+  </form>
+   <br>
+   <br>
+   {{ prediction_text }}
+</body>
+</html>
